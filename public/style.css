@@ -1,0 +1,149 @@
+
+
+
+/* Style de base pour l'alignement des éléments (Optionnel mais recommandé) */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-left: 4px solid #002f6c;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#task-form-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    display: flex;             
+    justify-content: center;   
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+/* 
+   FLEXBOX : Aligner les infos d'une tâche horizontalement
+   */
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #1e3a8a;
+
+    display: flex;                  /* Active Flexbox pour chaque ligne */
+    justify-content: space-between; /* Texte à gauche, espace au milieu */
+    align-items: center;            /* Aligne verticalement au milieu */
+}
+
+
+
+/* Sur grand écran (Ordinateur) */
+
+@media (min-width: 768px) {
+    #task-list {
+        display: flex;         /* Aligne les éléments li côte à côte */
+        gap: 15px;
+    }
+
+    li {
+        width: 250px;          /* Chaque tâche a désormais une largeur fixe de bloc */
+    }
+}
+
+/* --- STYLE DES BOUTONS DE LA LISTE DE TÂCHES --- */
+
+/* Conteneur des actions à droite (alignement parfait des boutons) */
+.task-item div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Base commune pour tous les boutons d'action */
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    outline: none;
+}
+
+/* Effet d'enfoncement discret au clic pour tous les boutons */
+.edit-btn:active, .delete-btn:active {
+    transform: scale(0.96);
+}
+
+/* Style spécifique au bouton "Modifier" / "Enregistrer" */
+.edit-btn {
+    background-color: #002f6c; /* Bleu institutionnel assorti à votre header */
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    background-color: #00408c; /* Bleu légèrement plus clair au survol */
+}
+
+/* Style spécifique au bouton "Supprimer" */
+.delete-btn {
+    background-color: #dc3545; /* Rouge d'avertissement standard */
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Rouge plus sombre au survol */
+}
+
+/* Style appliqué au champ d'édition temporaire (optionnel mais recommandé) */
+.task-item input[type="text"] {
+    padding: 4px 8px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    width: 60%;
+}
